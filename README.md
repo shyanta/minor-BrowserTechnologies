@@ -17,3 +17,13 @@ heeft daarom weinig effect. Probeer dit op te lossen met if(){}else{} statements
 null of undefined is. Geef de gebruiker een melding waarin ze zien dat dit onderdeel niet werkt.
 Dit is natuurlijk een tijdelijke oplossing. Het is de bedoeling dat ze zonder dat deel JavaScript evengoed
 nog een deel van de site kunnen gebruiken.
+
+* Door je verschillende sections alleen via JavaScipt op hidden te zetten, i.p.v. dit in de HTML al aan
+de sections mee te geven. Kan je zonder javascript evengoed alle pagina's bekijken. Ze staan alleen in een
+rij onder elkaar.
+Met JavaScript:
+![Met javascript](screenshots/metjs.jpg)
+Zonder JavaScript:
+![Zonder JavaScript](sreenshots/zonderjs/jpg)
+Hier zie je dat bij de laatste foto, de results section ook direct al wordt laten zien, alle sections zijn op deze manier 
+berijkbaar
