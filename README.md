@@ -24,6 +24,6 @@ rij onder elkaar.
 Met JavaScript:
 ![Met javascript](screenshots/metjs.jpg)
 Zonder JavaScript:
-![Zonder JavaScript](sreenshots/zonderjs.jpg)
+![Zonder JavaScript](screenshots/zonderjs.jpg)
 Hier zie je dat bij de laatste foto, de results section ook direct al wordt laten zien, alle sections zijn op deze manier 
 berijkbaar
