@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Funda</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="static/style.css">
+	</head>
+	<body>
+		<div class="loader hidden">
+			<div class="sk-circle">
+				<div class="sk-circle1 sk-child"></div>
+				<div class="sk-circle2 sk-child"></div>
+				<div class="sk-circle3 sk-child"></div>
+				<div class="sk-circle4 sk-child"></div>
+				<div class="sk-circle5 sk-child"></div>
+				<div class="sk-circle6 sk-child"></div>
+				<div class="sk-circle7 sk-child"></div>
+				<div class="sk-circle8 sk-child"></div>
+				<div class="sk-circle9 sk-child"></div>
+				<div class="sk-circle10 sk-child"></div>
+				<div class="sk-circle11 sk-child"></div>
+				<div class="sk-circle12 sk-child"></div>
+			</div>
+		</div>
+		<header>
+			<nav>
+				<a href="#home"><img src="img/logo.svg"></a>
+				<ul>
+					<li><a href="">Inloggen</a></li>
+					<li><a href="">Registreren</a></li>
+				</ul>
+			</nav>
+			<div class="banner">
+				<img src="img/header-boom.svg">
+				<img src="img/header-huis.svg">
+			</div>
+			<form>
+				<fieldset>
+					<input type="radio" name="type" id="koop" value="koop" checked/>
+					<label for="koop">Koop</label>
+					<input type="radio" name="type" id="huur" value="huur" />
+					<label for="huur">Huur</label>
+					<input type="radio" name="type" id="nieuwbouw" value="nieuwbouw" />
+					<label for="nieuwbouw">Nieuwbouw</label>
+				</fieldset>
+				<fieldset>
+					<label for="keywords">Woonplaats:</label>
+					<input type="text" name="keywords" id="keywords" />
+					<label>Prijs</label>
+					<label for="price_min">van:</label>
+					<select id="price-min">
+						<option name="price-min" value="0">€0</option>
+						<option name="price-min" value="50000">€50.000</option>
+						<option name="price-min" value="100000">€100.000</option>
+						<option name="price-min" value="200000">€200.000</option>
+						<option name="price-min" value="300000">€300.000</option>
+						<option name="price-min" value="400000">€400.000</option>
+						<option name="price-min" value="500000">€500.000</option>
+					</select>
+					<label for="price_max">Tot:</label>						
+					<select id="price-max">
+						<option name="price-max" value="">Geen maximum</option>
+						<option name="price-max" value="300000">€300.000</option>
+						<option name="price-max" value="400000">€400.000</option>
+						<option name="price-max" value="500000">€500.000</option>
+						<option name="price-max" value="600000">€600.000</option>
+						<option name="price-max" value="700000">€700.000</option>
+						<option name="price-max" value="800000">€800.000</option>
+						<option name="price-max" value="900000">€900.000</option>
+						<option name="price-max" value="1000000">€1.000.000</option>
+						<option name="price-max" value="1250000">€1.250.000</option>
+						<option name="price-max" value="1500000">€1.500.000</option>
+					</select>
+				<button type="submit">Search</button>
+				</fieldset>					
+			</form>	
+		</header>
+		<section id="home">
+			
+		</section>
+		<section id="results">
+			<h1>Results</h1>
+			<div id="search-results">
+				<aside>
+					<label for="tuin">Tuin</label>
+					<select id="tuin">
+						<option class="Tuin" value="1">1</option>
+						<option class="Tuin" value="2">2</option>
+						<option class="Tuin" value="3">3</option>
+						<option class="Tuin" value="4">4</option>
+						<option class="Tuin" value="5">5</option>
+					</select>
+					<label for="slaapkamers">Slaapkamers</label>
+					<select id="slaapkamers">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<label for="slaapkamersAantal">Aantal:</label>
+					<input type="number" name="slaapkamersAantal" id="slaapkamersAantal">
+					<label for="garage">Garage</label>
+					<select id="garage">
+						<option class="Garage" value="1">1</option>
+						<option class="Garage" value="2">2</option>
+						<option class="Garage" value="3">3</option>
+						<option class="Garage" value="4">4</option>
+						<option class="Garage" value="5">5</option>
+					</select>
+					<label for="woonoppervlakte">Woonoppervlakte</label>
+					<select id="woonoppervlakte">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<label for="woonoppmin">Minimale grootte:</label>
+					<input type="number" name="woonoppmin" id="woonoppmin">
+					<label for="perceeloppervlakte">Perceeloppervlakte</label>
+					<select id="perceeloppervlakte">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<label for="perceeloppmin">Minimale grootte:</label>
+					<input type="number" name="perceeloppmin" id="perceeloppmin">
+					<button id="sort">Send</button>
+				</aside>
+				<ul class="house">
+					<li>
+						<img class="url_img">
+						<a class="url_id"></a>
+						<div class="omschrijving">
+							<h2 class="adres"></h2>
+							<h3 class="postcode"></h3>
+							<p class="prijs"></p>
+							<p class="sub_info"></p>
+							<p class="makelaar"></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="detail" class="hidden" hidden>
+				<h1 class="title"></h1>
+				<img class="url_img">
+				<p class="postcode"></p>
+				<p class="prijs"></p>
+				<p class="sub_info"></p>
+				<p class="garage"></p>
+				<p class="tuin"></p>
+				<p class="makelaar"></p>
+			</div>
+		</section>
+		<section id="error">
+			<h1>Ah Oh</h1>
+			<h2>Er is iets misgegaan</h2>
+			<h2>Probeer de pagina te <a href="#home">herladen</a>.</h2>
+			<p>Er is een fout ontstaan bij het inladen van de pagina. Probeer het snel nog een keer. Ons excuses voor het ongemak</p>
+		</section>
+		<section id="noresults">
+			<h1>Het lijkt erop dat jou zoekopdracht geen resultaten heeft opgeleverd.</h1>
+			<h2>Probeer het nog een keer.</h2>
+		</section>
+		<script src="static/aja.min.js"></script>
+		<script src="static/routie.js"></script>
+		<script src="static/transparency.min.js"></script>
+		<script src="static/thenBy.min.js"></script>
+		<script src="static/app.js"></script>
+	</body>
+</html>
