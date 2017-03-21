@@ -21,7 +21,7 @@ with the <dialog> tag. They also won't add the `display: none;` style. And in th
 will be shown
 
 ## Poor Browser Fixes
-
+* To fix ...
 
 ## Sources
 1. [Can I Use](http://caniuse.com/#search=dialog)
