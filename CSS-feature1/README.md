@@ -38,7 +38,7 @@ The compatibility is with %69.62 of the browsers. What we have to do is think of
 for the other %30.38, without having to go back to the Repeating Cody CSS used to have. (source 2)
 
 ## Poor Browser Fixes
-* If you want to fix this problem you can do multiple things. Below the `background: var(--main-bg-color);`
+If you want to fix this problem you can do multiple things. Below the `background: var(--main-bg-color);`
 you can place a `background: brown;`. This way it will render the second rule when the browser doesn't
 recognize the first rule. Only this way you still have to change every color code when it's decided that the
 color has to change. You can also change this in the following way:

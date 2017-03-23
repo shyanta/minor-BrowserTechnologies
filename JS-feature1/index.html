@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Feature Dialog showModal()</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-size: 1em;
+			font-family: sans-serif;
+		}
+		dialog#login:not([open]) {
+			display: none;
+		}
+		dialog#login:not([open]).open {
+			display: flex;
+		}
+		dialog#login {
+			display: flex;
+			align-items: center;
+			height: calc(100vh - 5em);
+			margin: auto;
+		}
+		dialog form{
+			background-color: #dae1e5;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			border-radius: 10px;
+			width: 85%;
+			max-width: 20em;
+			padding: 1em;
+			margin: 0 auto;
+		}
+			dialog form label {
+				flex-basis: 100%;
+				font-size: 1.2em;
+				margin-bottom: .2em;
+			}
+				dialog form label[for="field-stay-logged-in"] {
+					flex-basis: 49%;
+		    		padding-left: 2%;
+					font-size: 1em;
+					line-height: 2;
+				}
+			dialog form input {
+				flex-basis: 100%;
+				line-height: 2;
+				height: 2em;
+				border: 0;
+				border-radius: 5px;
+				margin: 0 0 .8em 0;
+			}
+				dialog form input:focus{
+					outline-style: none;
+		    		box-shadow: 0 0 .5em #09BC8A;
+				}
+				dialog form input:valid {
+					outline-style: none;
+					background-color: #eafcf2;
+				}
+				dialog form input[type="checkbox"]{
+					position: absolute;
+					clip: rect(0,0,0,0);
+				}
+					dialog form input[type="checkbox"]:focus + label {
+						box-shadow: 0 0 .5em #09BC8A;
+						border-radius: 5px;
+					}
+					dialog form input[type="checkbox"] + label::before{
+						content: '\a0';
+						display: inline-block;
+						vertical-align: .2em;
+						width: .8em;
+						height: .8em;
+						margin-right: .2em;
+						border-radius: .2em;
+						background: silver;
+						text-indent: .15em;
+						line-height: .5;
+					}
+					dialog form input[type="checkbox"]:checked + label::before{
+						content: '\2713';
+						color: #fff;
+						background-color: #09BC8A;
+					}
+					dialog form input[type="checkbox"]:hover + label::before,
+					dialog form label[for="field-stay-logged-in"]:hover::before{
+						background-color: rgba(9, 188, 138,0.5);
+					}
+						dialog form input[type="checkbox"]:hover:checked + label::before{
+							background-color: #09BC8A;
+						}
+			dialog form a {
+				flex-basis: 45%;
+				font-size: .8em;
+				line-height: 2.8;
+				vertical-align: center;
+				text-align: right;
+				color: #999;
+				text-decoration: none;
+			}
+				dialog form a:hover {
+					color: #09BC8A;	
+				}
+				dialog form a:focus {
+					outline-style: none;
+					box-shadow: 0 0 .5em #09BC8A;
+					border-radius: 5px;			
+				}
+			dialog form button[type="submit"] {
+				width: 100%;
+				border: none;
+				background-color: #09BC8A;
+				line-height: 2;
+				border-radius: 5px;
+				font-size: 1.5em;
+				color: white;
+			}
+				dialog form button[type="submit"]:hover {
+					background-color: #03ad7d;
+				}
+				dialog form button[type="submit"]:focus{
+					outline-style: none;
+					box-shadow: 0 0 .5em #999;
+				}
+	</style>
+</head>
+<body>
+	<button id="loginDialog">Log hier in</button>
+	<dialog id="login">
+		<form action="/" method="post">
+			<label for="field-email">Email</label>
+			<input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+			<label for="field-password">Password</label>
+			<input type="password" id="field-password" name="field-password" required>
+			<input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+			<label for="field-stay-logged-in">Stay logged in</label>
+			<a href="/">Forgot password</a>
+			<button type="submit">Login</button>
+		</form>
+		<button id="close">Close</button>
+	</dialog>
+	<script type="text/javascript">
+		(function() {
+			var openBtn = document.getElementById('loginDialog');
+			var closeBtn = document.getElementById('close');
+			var dialog = document.getElementById('login');
+
+			if (typeof HTMLDialogElement === 'function') {
+				console.log("Does support Dialog");
+				console.log(typeof HTMLDialogElement === 'function');
+				// Update button opens a modal dialog
+				openBtn.addEventListener('click', function() {
+					dialog.showModal();				
+				});
+
+				// Form cancel button closes the dialog box
+				closeBtn.addEventListener('click', function() {
+					dialog.close();
+				});
+			} else {
+				console.log("Doesn't support Dialog");
+				console.log(typeof HTMLDialogElement === 'function');
+				// Update button opens a modal dialog
+				openBtn.addEventListener('click', function() {
+					dialog.classList.add("open");	
+				});
+
+				// Form cancel button closes the dialog box
+				closeBtn.addEventListener('click', function() {
+					dialog.classList.remove("open");
+				});
+			}
+		})();
+	</script>
+</body>
+</html>
