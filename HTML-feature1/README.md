@@ -10,11 +10,9 @@ in the other browsers. This because the poor browsers are the majority. (Source 
 The standard styling a <dialog> tag adds with the JavaScript functions, won't work.
 The given `display: flex;` overwrites the `display: none;` that is given to the `dialog:not([open]);`
 I solved this problem like this:
-	```
-	dialog#login:not([open]) {
-		display: none;
-	}
-	```
+```dialog#login:not([open]) {
+	display: none;
+}```
 In this way I can overwrite the `display: flex;` that was the problem before.
 This also fixes a part of the poor browsers. Because the poor browsers aren't compatible
 with the <dialog> tag. They also won't add the `display: none;` style. And in this way, it 
@@ -24,4 +22,4 @@ will be shown
 * To fix ...
 
 ## Sources
-1. [Can I Use](http://caniuse.com/#search=dialog)
+1. [CanIUse.com #Dialog](http://caniuse.com/#search=dialog)

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Feature Variables</title>
+	<style type="text/css">
+		@supports(--primary-color: #0c4f59){
+			:root {
+				--primary-color: #0c4f59;
+				--secondary-color: #2ba9bc;
+				--primary-bg-color: #b3d7dc;
+				--secondary-bg-color: #0c4f59;
+			}
+			article:nth-child(odd) {
+				color: white;
+				background: var(--primary-bg-color);
+			}
+				article:nth-child(odd) h1 {				
+					color: var(--primary-color);
+				}
+			article:nth-child(even) {
+				color: white;
+				background: var(--secondary-bg-color);			
+			}
+				article:nth-child(even) h1 {				
+					color: var(--secondary-color);
+				}
+		}
+		.primary-bg-color {
+			background: #b3d7dc;
+		}
+		.secondary-bg-color {
+			background: #0c4f59;			
+		}
+		.primary-color{				
+			color: #0c4f59;
+		}
+		.secondary-color {				
+			color: #2ba9bc;
+		}
+		article {
+			color: white;
+		}
+		
+	</style>
+</head>
+<body>
+	<article class="primary-bg-color">
+		<h1 class="primary-color">Article Title</h1>
+		<p>Subtext for the first article. This may have an other color style then the even articles</p>
+	</article>
+	<article class="secondary-bg-color">
+		<h1 class="secondary-color">Article Title</h1>
+		<p>Subtext for the second article. This has another color then the odd articles</p>
+	</article>
+</body>
+</html>

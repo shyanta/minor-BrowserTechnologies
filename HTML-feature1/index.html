@@ -12,6 +12,9 @@
 		dialog#login:not([open]) {
 			display: none;
 		}
+		dialog#login:not([open]).open {
+			display: flex;
+		}
 		dialog#login {
 			display: flex;
 			align-items: center;
@@ -121,7 +124,6 @@
 					outline-style: none;
 					box-shadow: 0 0 .5em #999;
 				}
-
 	</style>
 </head>
 <body>
@@ -145,15 +147,31 @@
 			var closeBtn = document.getElementById('close');
 			var dialog = document.getElementById('login');
 
-			// Update button opens a modal dialog
-			openBtn.addEventListener('click', function() {
-				dialog.showModal();
-			});
+			if (typeof window.showModalDialog === 'undefined') {
+				console.log('No. ');
+				console.log(typeof window.showModalDialog === 'undefined');
+				// Update button opens a modal dialog
+				openBtn.addEventListener('click', function() {
+					dialog.classList.add("open");	
+				});
 
-			// Form cancel button closes the dialog box
-			closeBtn.addEventListener('click', function() {
-				dialog.close();
-			});
+				// Form cancel button closes the dialog box
+				closeBtn.addEventListener('click', function() {
+					dialog.classList.remove("open");
+				});
+			} else {
+				console.log('Yes! ');
+				console.log(typeof window.showModalDialog === 'undefined');
+				// Update button opens a modal dialog
+				openBtn.addEventListener('click', function() {
+					dialog.showModal();				
+				});
+
+				// Form cancel button closes the dialog box
+				closeBtn.addEventListener('click', function() {
+					dialog.close();
+				});
+			}
 		})();
 	</script>
 </body>
