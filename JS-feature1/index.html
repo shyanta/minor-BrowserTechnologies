@@ -167,12 +167,12 @@
 				console.log(typeof HTMLDialogElement === 'function');
 				// Update button opens a modal dialog
 				openBtn.addEventListener('click', function() {
-					dialog.classList.add("open");
+					dialog.className = 'open';
 				});
 
 				// Form cancel button closes the dialog box
 				closeBtn.addEventListener('click', function() {
-					dialog.classList.remove("open");
+					dialog.className = '';
 				});
 			}
 		})();
