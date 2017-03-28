@@ -165,15 +165,15 @@
 			} else {
 				console.log("Doesn't support Dialog");
 				console.log(typeof HTMLDialogElement === 'function');
-				dialog.setAttribute = 'hidden';
+				dialog.setAttribute("class", "hidden");
 				// Update button opens a modal dialog
 				openBtn.addEventListener('click', function() {
-					dialog.className = 'open';
+					dialog.setAttribute("class", "");
 				});
 
 				// Form cancel button closes the dialog box
 				closeBtn.addEventListener('click', function() {
-					dialog.className = '';
+					dialog.setAttribute("class", "hidden");
 				});
 			}
 		})();
