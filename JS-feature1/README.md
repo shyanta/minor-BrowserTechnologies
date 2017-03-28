@@ -57,21 +57,6 @@ The Dialog Tag can be used in all browsers. But the Dialog tag is used in combin
 isn't supported, the 'open' attribute won't be added. Without the 'open' attribute, the functionality
 of the dialog is gone. We have to write a bit of code to create a solution for this problem.(Source 2)
 
-## Encountered Problems
-* Because the login form inside the <dialog> tag is style with `display: flex;`
-The standard styling a <dialog> tag adds with the JavaScript functions, won't work.
-The given `display: flex;` overwrites the `display: none;` that is given to the `dialog:not([open]);`
-I solved this problem like this:
-```
-dialog#login:not([open]) {
-	display: none;
-}
-```
-In this way I can overwrite the `display: flex;` that was the problem before.
-This also fixes a part of the poor browsers. Because the poor browsers aren't compatible
-with the <dialog> tag. They also won't add the `display: none;` style. And in this way, it
-will be shown
-
 ## Poor Browser Fixes
 In order to fix the modal, we have to write a if/else statement which checks if the `.showModal()`
 is supported in the browser. If it isn't supported, we have to open and close the dialog by classes.
@@ -87,9 +72,10 @@ var dialog = document.getElementById('login');
 
 if (typeof HTMLDialogElement === 'function') {
 	console.log("Does support Dialog");
-	// Update button opens a modal dialog
+	console.log(typeof HTMLDialogElement === 'function');
+	// Open button opens a modal dialog
 	openBtn.addEventListener('click', function() {
-		dialog.showModal();				
+		dialog.showModal();
 	});
 
 	// Form cancel button closes the dialog box
@@ -98,25 +84,31 @@ if (typeof HTMLDialogElement === 'function') {
 	});
 } else {
 	console.log("Doesn't support Dialog");
-	// Update button opens a modal dialog
+	console.log(typeof HTMLDialogElement === 'function');
+	dialog.setAttribute("class", "hidden");
+	// Open button opens a modal dialog
 	openBtn.addEventListener('click', function() {
-		dialog.classList.add("open");
+		dialog.setAttribute("class", "");
 	});
 
 	// Form cancel button closes the dialog box
 	closeBtn.addEventListener('click', function() {
-		dialog.classList.remove("open");
+		dialog.setAttribute("class", "hidden");
 	});
 }
 ```
 This function checks if HTMLDialogElement is a function, if it is, it will use the original way
 for the dialog tag. Which includes the `.showModal()` and `.close()` functions. If not, the
-class `.open` will be added to the Dialog. This will be used with the following CSS.
+class `.hidden` will be added to the Dialog, using `.setAttribute()`. When the page is loaded, JavaScript adds a `.hidden` to the dialog. The buttons will toggle this class, which will make it show and hide. Add the `.hidden` class with JavaScript, so when the JavaScript isn't working, the form will still be shown.
+This will be used with the following CSS.
 CSS:
 ```
-dialog#login:not([open]).open {
-			display: flex;
-		}
+dialog#login {
+	display: block;
+}
+dialog#login.hidden {
+	display: none;
+}
 ```
 The reason to still add the `:not([open])` is because in this way, you don't have the risk
 that the CSS rule above won't interfere. Because I used `display: flex;` in my styling, I added
@@ -125,4 +117,4 @@ this, if you don't use this, just enter `display: block;` (or one of the other o
 ## Sources
 1. [Developer Mozzila Dialog](https://developer.mozilla.org/nl/docs/Web/HTML/Element/dialog)
 2. [CanIUse.com #Dialog](http://caniuse.com/#search=dialog)
-3. [Stackoverflow](http://stackoverflow.com/questions/31845494/how-to-detect-if-browser-supports-dialog)
+3.  [Stackoverflow](http://stackoverflow.com/questions/31845494/how-to-detect-if-browser-supports-dialog)
