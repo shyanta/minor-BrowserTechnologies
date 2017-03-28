@@ -165,6 +165,7 @@
 			} else {
 				console.log("Doesn't support Dialog");
 				console.log(typeof HTMLDialogElement === 'function');
+				dialog.setAttribute = 'hidden';
 				// Update button opens a modal dialog
 				openBtn.addEventListener('click', function() {
 					dialog.className = 'open';
