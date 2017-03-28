@@ -9,7 +9,7 @@ anything. A modal can also be used in combination with a lightbox. So it becomes
 on the website.
 
 ### How?
-First you have to create the HTML, which ain't that hard. Simple put it in a `<dialog` and
+First you have to create the HTML, which ain't that hard. Simple put it in a `<dialog>` and
 it can be used. After that you have to create a few JS lines, to make the interaction work.
 HTML:
 ```
@@ -69,7 +69,7 @@ dialog#login:not([open]) {
 ```
 In this way I can overwrite the `display: flex;` that was the problem before.
 This also fixes a part of the poor browsers. Because the poor browsers aren't compatible
-with the <dialog> tag. They also won't add the `display: none;` style. And in this way, it 
+with the <dialog> tag. They also won't add the `display: none;` style. And in this way, it
 will be shown
 
 ## Poor Browser Fixes
@@ -100,7 +100,7 @@ if (typeof HTMLDialogElement === 'function') {
 	console.log("Doesn't support Dialog");
 	// Update button opens a modal dialog
 	openBtn.addEventListener('click', function() {
-		dialog.classList.add("open");	
+		dialog.classList.add("open");
 	});
 
 	// Form cancel button closes the dialog box

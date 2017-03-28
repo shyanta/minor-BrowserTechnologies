@@ -9,13 +9,16 @@
 			font-size: 1em;
 			font-family: sans-serif;
 		}
-		dialog#login:not([open]) {
+		/*dialog#login:not([open]) {
 			display: none;
+		}*/
+		dialog#login.open:not([open]) {
+			display: block;
 		}
-		dialog#login:not([open]).open {
-			display: flex;
+		dialog#login.open {
+			display: block;
 		}
-		dialog#login {
+		/*dialog#login {
 			display: flex;
 			align-items: center;
 			height: calc(100vh - 5em);
@@ -101,12 +104,12 @@
 				text-decoration: none;
 			}
 				dialog form a:hover {
-					color: #09BC8A;	
+					color: #09BC8A;
 				}
 				dialog form a:focus {
 					outline-style: none;
 					box-shadow: 0 0 .5em #09BC8A;
-					border-radius: 5px;			
+					border-radius: 5px;
 				}
 			dialog form button[type="submit"] {
 				width: 100%;
@@ -123,7 +126,7 @@
 				dialog form button[type="submit"]:focus{
 					outline-style: none;
 					box-shadow: 0 0 .5em #999;
-				}
+				}*/
 	</style>
 </head>
 <body>
@@ -152,7 +155,7 @@
 				console.log(typeof HTMLDialogElement === 'function');
 				// Update button opens a modal dialog
 				openBtn.addEventListener('click', function() {
-					dialog.showModal();				
+					dialog.showModal();
 				});
 
 				// Form cancel button closes the dialog box
@@ -164,7 +167,7 @@
 				console.log(typeof HTMLDialogElement === 'function');
 				// Update button opens a modal dialog
 				openBtn.addEventListener('click', function() {
-					dialog.classList.add("open");	
+					dialog.classList.add("open");
 				});
 
 				// Form cancel button closes the dialog box
