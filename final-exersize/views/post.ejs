@@ -1,0 +1,23 @@
+<%- include('./partials/head.ejs') %>
+<form class="" action="/" method="post">
+	<input name="nerdy" type="text" value="<%= text %>" autofoces/>
+	<select name="color">
+		<option value="black">Black</option>
+		<option value="grey">Grey</option>
+		<option value="white">White</option>
+		<option value="green">Green</option>
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+	</select>
+	<input type="submit" />
+</form>
+<section>
+	<img src="img/shirt-<%=color%>.jpg" alt="Red Tshirt" title="Red Tshirt"/>
+	<p><% if (text === ""){%>
+		Fout
+	<%} else {%>
+		<%= text %>
+	<%}%></p>
+</section>
+
+<%- include('./partials/foot.ejs') %>

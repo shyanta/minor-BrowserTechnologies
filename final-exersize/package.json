@@ -1,0 +1,25 @@
+{
+  "name": "ServerSidedFunda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-myconnection": "^1.0.4",
+    "express-session": "^1.13.0",
+    "local-storage": "^1.4.2",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
