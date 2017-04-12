@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-family: sans-serif;
+}
+	header {
+		background-color: #00dde0;
+		color: white;
+		text-align: center;
+		flex-basis: 100%;
+	}
+	form {
+		align-items: flex-start;
+		background-color: #009699;
+		color: white;
+		flex-basis: 40%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+		form textarea {
+			align-self: flex-start;
+			flex-basis: 100%;
+		}
+		form label {
+			align-self: flex-start;
+			flex-basis: 50%;
+			max-height: 20px;
+		}
+			form label[for="nerdy"]{
+				align-self: flex-start;
+				flex-basis: 100%;
+			}
+		form select, form input {
+			align-self: flex-start;
+			flex-basis: 50%;
+		}
+		form input {
+			box-sizing: border-box;
+		}
+	section {
+		flex-basis: 60%;
+		text-align: center;
+		position: relative;
+	}
+		section p {
+			width: 180px;
+			position: absolute;
+			top: 30%;
+			right: calc(50% - 90px);
+			font-size: 20px;
+			font-weight: bold;
+		}
+		section button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: lightblue;
+			color: white;
+			padding: 5px 10px;
+			border: none;
+			cursor: pointer;
+		}
+	section.saved-items {
+		flex-basis: 100%;
+	}
+		section.saved-items h2 {
+			background-color: #00dde0;
+			margin: 0;
+			padding: 20px 0;
+			color: white;
+		}
+		section.saved-items p {
+			width: auto;
+			position: static;
+			font-size: 16px;
+			font-weight: normal;
+		}
+	footer {
+		flex-basis: 100%;
+		text-align: center;
+		color: white;
+		background-color: #005051;
+	}

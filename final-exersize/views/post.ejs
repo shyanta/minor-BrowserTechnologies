@@ -1,7 +1,10 @@
 <%- include('./partials/head.ejs') %>
 <form class="" action="/" method="post">
-	<input name="nerdy" type="text" value="<%= text %>" autofoces/>
-	<select name="color">
+	<label for="nerdy">Type your Nerdy text here</label>
+	<textarea name="nerdy" type="text" rows="5" autofocus><%= text%></textarea>
+	<label for="color">Tshirt Color:</label>
+	<select name="color" id="color">
+		<option value="black">Pick a Color</option>
 		<option value="black">Black</option>
 		<option value="grey">Grey</option>
 		<option value="white">White</option>
@@ -9,15 +12,40 @@
 		<option value="red">Red</option>
 		<option value="blue">Blue</option>
 	</select>
-	<input type="submit" />
+	<label for="text">Text Color:</label>
+	<select name="text" id="text">
+		<option value="red">Pick a Color</option>
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+		<option value="hotpink">Pink</option>
+		<option value="white">White</option>
+		<option value="pink">Black</option>
+	</select>
+	<label for="font">Text Font:</label>
+	<select name="font" id="font">
+		<option value="sans-serif">Pick a Font</option>
+		<option style="font-family: verdana;" value="Verdana">Verdana</option>
+		<option style="font-family: Comic Sans MS;" value="Comic Sans MS">Comic Sans MS</option>
+		<option style="font-family: Impact;" value="Impact">Impact</option>
+		<option style="font-family: Lucida Console;" value="Lucida Console">Lucida Console</option>
+		<option style="font-family: Arial Black;" value="Arial Black">Arial Black</option>
+	</select>
+	<label for="size">Font Size:</label>
+	<input id="size" type="number" min="20" max="60" name="size" value="20">
+	<input type="submit" value="send"/>
 </form>
 <section>
-	<img src="img/shirt-<%=color%>.jpg" alt="Red Tshirt" title="Red Tshirt"/>
-	<p><% if (text === ""){%>
-		Fout
+	<p style="color:<%= textColor%>; font-family:<%=font %>; font-size: <%= size%>px;"><% if (text === ""){%>
+
 	<%} else {%>
 		<%= text %>
 	<%}%></p>
+	<img src="img/shirt-<%=color%>.jpg" alt="<%= color%>" title="<%= color%>"/>
+	<button hidden>Save This Shirt!</button>
+</section>
+<section class="saved-items" hidden>
+	<h2>Saved Items</h2>
+	<p></p>
 </section>
 
 <%- include('./partials/foot.ejs') %>
