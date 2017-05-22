@@ -10,9 +10,11 @@
 </head>
 <body>
 	<button id="click">Click for some action</button>
+	<button id="no-action">No more action</button>
 	<h1>SOME ACTION</h1>
 	<script type="text/javascript">
 			var btn = document.getElementById("click");
+			var noActionBtn = document.getElementById('no-action');
 			var output = document.getElementsByTagName('h1')[0];
 			output.setAttribute('class', 'hidden');
 
@@ -20,10 +22,15 @@
 				btn.addEventListener('click', function(){
 					output.removeAttribute('class', 'hidden');
 				});
+				noActionBtn.addEventListener('click', function(){
+					output.setAttribute('class', 'hidden');
+				});
 			} else {
-				console.log('blub3');
 				btn.attachEvent('onclick', function(){
 					output.removeAttribute('class', 'hidden');
+				});
+				noActionBtn.attachEvent('onclick', function(){
+					output.setAttribute('class', 'hidden');
 				});
 			}
 	</script>
