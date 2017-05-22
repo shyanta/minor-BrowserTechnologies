@@ -5,7 +5,8 @@
 ### CSS Feature 1 - CSS Variables
 [CSS Feature 1](https://shyanta.github.io/minor-BrowserTechnologies/CSS-feature1/index.html)
 
-### CSS Feature 2 -
+### CSS Feature 2 - Display Flex
+[CSS Feature 2](https://shyanta.github.io/minor-BrowserTechnologies/CSS-feature2/index.html)
 
 ### HTML Feature 1 - Main Tag
 [HTML Feature 1](https://shyanta.github.io/minor-BrowserTechnologies/HTML-feature1/index.html)
