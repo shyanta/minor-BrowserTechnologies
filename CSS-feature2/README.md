@@ -4,101 +4,93 @@
 ### What?
 Display flex is a way to create some sort of raster in your site. You can make
 rows and columns. Display flex is based on percentages and sizes compared on other
-elements.
+elements. Like when you have 2 elements in a row, but you want the second element to be twice as big as the first.
 
 ### How?
-You can save variables in your CSS in the following way:
-```
-:root {
-  --main-bg-color: brown;
+The parent element gets a `display:flex;`. The childeren elements get stuff like
+`flex-basis: 50%;`.
+```css
+body {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+	margin: 0;
+}
+section {
+	background-color: lightgreen;
+	flex-basis: 50%;
+	text-align: center;
+	padding: 0;
+}
+section:nth-of-type(2) {
+	background-color: lightblue;
+}
+section:last-child {
+	background: hotpink;
+	flex-basis: 100%;
 }
 ```
-By using `:root` the variables will be available everywhere. The prefix used to be var- but it's
-changed to --. If you want to call the variable in a element later on. You can do this like this:
-```
-.three {
-  color: white;
-  background-color: var(--main-bg-color);
-  margin: 10px;
-  width: 75px;
-}
-```
-If you want the color to change, you only have to do this in the `:root`. (source 1)
+Flex-wrap is used to tell the parent, the children can be placed over more rows, in
+stead of pushing them all in 1 row. The standard flex-direction is set to row. If
+you want it to be in columns, you'll have to overwrite the standards.
+Flex-basis is used to tell how big you want each element to be.(source 1)
 
 ## Compatibility
-CSS Variables are newly added. This is a feature where lots of developers have been waiting for.
-Before this feature developers often used sass, because they supported variables and nesting. The
-variables problem is solved with this feature. With this you can write your own CSS instead of letting
-a preprocessor write it for you. You have a 100% overview of the real CSS code and be sure u understand
-everything you wrote and more important, that other developers can understand it when needed.
-The compatibility is with %69.62 of the browsers. What we have to do is think of a way to make this work
-for the other %30.38, without having to go back to the Repeating Cody CSS used to have. (source 2)
+A lot of browsers support `display:flex` except for older versions that IE9. Also a lot of browsers only have partial support. When a browsers doesn't support
+`display:flex` the whole website layout can be hurt.(source 2)
 
 ## Poor Browser Fixes
-If you want to fix this problem you can do multiple things. Below the `background: var(--main-bg-color);`
-you can place a `background: brown;`. This way it will render the second rule when the browser doesn't
-recognize the first rule. Only this way you still have to change every color code when it's decided that the
-color has to change. You can also change this in the following way:
-HTML:
-
-```
-<article class="primary-bg-color">
-	<h1 class="primary-color">Article Title</h1>
-	<p>Subtext for the first article. This may have an other color style then the even articles</p>
-</article>
-<article class="secondary-bg-color">
-	<h1 class="secondary-color">Article Title</h1>
-	<p>Subtext for the second article. This has another color then the odd articles</p>
-</article>
-
-```
+To fix this you'll only have to make some changes in CSS. This problem can be fixed
+with the use of the `@supports`. Now don't worry, if a browser doesn't support the
+'@support', the code inside will not be executed. So make sure to use `@supports` and
+NOT the `@supports not`. Because when it isn't recognized it will exucute the code
+outside of this. Which then will contain the styling that isn't supported.
 CSS:
+```css
+body {
+	margin: 0;
+}
+section {
+	width: 50%;
+	float: left;
+	background-color: lightgreen;
+	text-align: center;
+	padding: 50px 0;
+}
+section:nth-of-type(2){
+	background-color: lightblue;
+}
+section:last-child {
+	width: 100%;
+	background-color: hotpink;
+}
+@supports(display:flex){
+	body {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		height: 100vh;
+		margin: 0;
+	}
+	section {
+		background-color: lightgreen;
+		flex-basis: 50%;
+		text-align: center;
+		padding: 0;
+	}
+	section:nth-of-type(2) {
+		background-color: lightblue;
+	}
+	section:last-child {
+		background: hotpink;
+		flex-basis: 100%;
+	}
+}
 ```
-@supports(--primary-color: #0c4f59){
-	:root {
-		--primary-color: #0c4f59;
-		--secondary-color: #2ba9bc;
-		--primary-bg-color: #b3d7dc;
-		--secondary-bg-color: #0c4f59;
-	}
-	article:nth-child(odd) {
-		color: white;
-		background: var(--primary-bg-color);
-	}
-		article:nth-child(odd) h1 {				
-			color: var(--primary-color);
-		}
-	article:nth-child(even) {
-		color: white;
-		background: var(--secondary-bg-color);			
-	}
-		article:nth-child(even) h1 {				
-			color: var(--secondary-color);
-		}
-}
-.primary-bg-color {
-	background: #b3d7dc;
-}
-.secondary-bg-color {
-	background: #0c4f59;			
-}
-.primary-color{				
-	color: #0c4f59;
-}
-.secondary-color {				
-	color: #2ba9bc;
-}
-article {
-	color: white;
-}
-```
-With the `@supports` you can check if the browser knows the `--primary-color`, if so, the code inside will be
-executed. When the browser doesn't know this, it will fall back to the code below. By using classes. U can create
-sort like variables. Each class will get their color code. By adding the classes the right way in your HTML. This
-will be rendered in the same way as the variables will. It does take a lot of classes to use and add, but when the
-colors have to be changed you only have to do this twice per color. Which could make your life a lot easier when
-your working on a big site.
+Outside of the `@supports` you will create a styling based on floats. So this code
+will be executed always. When the `@supports` is true, the code in here will overwrite
+the code above.
 
 ## Sources
-1. [Developer Mozilla CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)
-2. [CanIUse.com #CSS-variables](http://caniuse.com/#feat=css-variables)
+1. [CSS Tricks - Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+2. [CanIUse.com #Flexbox](http://caniuse.com/#feat=flexbox)
