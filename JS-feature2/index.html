@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Feature Dialog showModal()</title>
+	<style type="text/css">
+		h1.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="click">Click for some action</button>
+	<h1>SOME ACTION</h1>
+	<script type="text/javascript">
+			var btn = document.getElementById("click");
+			var output = document.getElementsByTagName('h1')[0];
+			output.setAttribute('class', 'hidden');
+
+			if (document.addEventListener){
+				btn.addEventListener('click', function(){
+					output.removeAttribute('class', 'hidden');
+				});
+			} else {
+				console.log('blub3');
+				btn.attachEvent('onclick', function(){
+					output.removeAttribute('class', 'hidden');
+				});
+			}
+	</script>
+</body>
+</html>
