@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Feature Variables</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		section {
+			width: 50%;
+			float: left;
+			background-color: lightgreen;
+			text-align: center;
+			padding: 50px 0;
+		}
+		section:nth-of-type(2){
+			background-color: lightblue;
+		}
+		section:last-child {
+			width: 100%;
+			background-color: hotpink;
+		}
+		@supports(display:flex){
+			body {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				height: 100vh;
+				margin: 0;
+			}
+			section {
+				background-color: lightgreen;
+				flex-basis: 50%;
+				text-align: center;
+				padding: 0;
+			}
+			section:nth-of-type(2) {
+				background-color: lightblue;
+			}
+			section:last-child {
+				background: hotpink;
+				flex-basis: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<p>Section 1</p>
+	</section>
+	<section>
+		<p>Section 2</p>
+	</section>
+	<section>
+		<p>Section 3</p>
+	</section>
+</body>
+</html>
