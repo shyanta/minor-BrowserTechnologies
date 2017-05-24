@@ -41,11 +41,18 @@
 		<%= text %>
 	<%}%></p>
 	<img src="img/shirt-<%=color%>.jpg" alt="<%= color%>" title="<%= color%>"/>
-	<button hidden>Save This Shirt!</button>
+	<button class="button-first">Save as first Shirt</button>
+	<button class="button-second">Save as second Shirt</button>
+	<button class="button-third">Save as third Shirt</button>
 </section>
 <section class="saved-items" hidden>
 	<h2>Saved Items</h2>
 	<p></p>
+	<ul class="saved-shirts">
+		<li class="shirtOne"></li>
+		<li class="shirtTwo"></li>
+		<li class="shirtThree"></li>
+	</ul>
 </section>
 
 <%- include('./partials/foot.ejs') %>

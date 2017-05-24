@@ -56,7 +56,9 @@ body {
 			font-size: 20px;
 			font-weight: bold;
 		}
-		section button {
+		section .button-first,
+		section .button-second,
+		section .button-third {
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -65,6 +67,12 @@ body {
 			padding: 5px 10px;
 			border: none;
 			cursor: pointer;
+		}
+		section .button-second {
+			top: 50px;
+		}
+		section .button-third {
+			top: 100px;
 		}
 	section.saved-items {
 		flex-basis: 100%;
@@ -81,6 +89,15 @@ body {
 			font-size: 16px;
 			font-weight: normal;
 		}
+		section.saved-items ul.saved-shirts {
+			list-style: none;
+			padding-left: 0;
+		}
+			section.saved-items ul.saved-shirts li {
+				width: 200px;
+				height: 200px;
+				float: left;
+			}
 	footer {
 		flex-basis: 100%;
 		text-align: center;
