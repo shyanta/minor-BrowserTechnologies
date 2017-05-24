@@ -34,21 +34,22 @@
 	<input id="number" type="number" min="20" name="size" value="20">
 	<input type="submit" value="send"/>
 </form>
-<section>
-	<p>Your Nerdy text will be placed here</p>
-	<img src="img/shirt-red.jpg" alt="red" title="red"/>
-	<button class="button-first">Save as first Shirt</button>
-	<button class="button-second">Save as second Shirt</button>
-	<button class="button-third">Save as third Shirt</button>
-</section>
-<section class="saved-items">
+<div id="make-shirt">
+	<p id="shirt-text">Your Nerdy text will be placed here</p>
+	<img id="img" src="img/shirt-red.jpg" alt="red" title="red"/>
+	<button id="button-first">Save as first Shirt</button>
+	<button id="button-second">Save as second Shirt</button>
+	<button id="button-third">Save as third Shirt</button>
+</div>
+<div class="clear"></div>
+<div id="saved-items">
 	<h2>Saved Items</h2>
-	<p></p>
-	<ul class="saved-shirts">
-		<li class="shirtOne"></li>
-		<li class="shirtTwo"></li>
-		<li class="shirtThree"></li>
+	<p id="no-shirts"></p>
+	<ul id="saved-shirts">
+		<li id="shirtOne"></li>
+		<li id="shirtTwo"></li>
+		<li id="shirtThree"></li>
 	</ul>
-</section>
+</div>
 
 <%- include('./partials/foot.ejs') %>

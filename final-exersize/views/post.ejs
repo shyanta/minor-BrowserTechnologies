@@ -34,25 +34,26 @@
 	<input id="size" type="number" min="20" max="60" name="size" value="20">
 	<input type="submit" value="send"/>
 </form>
-<section>
-	<p style="color:<%= textColor%>; font-family:<%=font %>; font-size: <%= size%>px;"><% if (text === ""){%>
+<div id="make-shirt">
+	<p id="shirt-text" style="color:<%= textColor%>; font-family:<%=font %>; font-size: <%= size%>px;"><% if (text === ""){%>
 
 	<%} else {%>
 		<%= text %>
 	<%}%></p>
-	<img src="img/shirt-<%=color%>.jpg" alt="<%= color%>" title="<%= color%>"/>
-	<button class="button-first">Save as first Shirt</button>
-	<button class="button-second">Save as second Shirt</button>
-	<button class="button-third">Save as third Shirt</button>
-</section>
-<section class="saved-items" hidden>
+	<img id="img" src="img/shirt-<%=color%>.jpg" alt="<%= color%>" title="<%= color%>"/>
+	<button id="button-first">Save as first Shirt</button>
+	<button id="button-second">Save as second Shirt</button>
+	<button id="button-third">Save as third Shirt</button>
+</div>
+<div class="clear"></div>
+<div id="saved-items" hidden>
 	<h2>Saved Items</h2>
 	<p></p>
-	<ul class="saved-shirts">
-		<li class="shirtOne"></li>
-		<li class="shirtTwo"></li>
-		<li class="shirtThree"></li>
+	<ul id="saved-shirts">
+		<li id="shirtOne"></li>
+		<li id="shirtTwo"></li>
+		<li id="shirtThree"></li>
 	</ul>
-</section>
+</div>
 
 <%- include('./partials/foot.ejs') %>

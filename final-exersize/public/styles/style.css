@@ -6,59 +6,58 @@ body {
 	flex-wrap: wrap;
 	font-family: sans-serif;
 }
-	header {
+	#header {
 		background-color: #00dde0;
 		color: white;
 		text-align: center;
-		flex-basis: 100%;
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
 	}
 	form {
-		align-items: flex-start;
 		background-color: #009699;
 		color: white;
-		flex-basis: 40%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		float: left;
+		width: 40%;
 		padding: 20px;
 		box-sizing: border-box;
 	}
 		form textarea {
-			align-self: flex-start;
-			flex-basis: 100%;
+			width: 100%;
 		}
 		form label {
-			align-self: flex-start;
-			flex-basis: 50%;
+			float: left;
+			width: 50%;
 			max-height: 20px;
 		}
 			form label[for="nerdy"]{
-				align-self: flex-start;
-				flex-basis: 100%;
+				width: 100%;
 			}
 		form select, form input {
-			align-self: flex-start;
-			flex-basis: 50%;
+			float: left;
+			width: 50%;
 		}
 		form input {
 			box-sizing: border-box;
 		}
-	section {
-		flex-basis: 60%;
+	#make-shirt {
+		width: 60%;
+		float: right;
 		text-align: center;
 		position: relative;
 	}
-		section p {
+		#make-shirt p {
 			width: 180px;
 			position: absolute;
 			top: 30%;
 			right: calc(50% - 90px);
+			right: 40%;
 			font-size: 20px;
 			font-weight: bold;
 		}
-		section .button-first,
-		section .button-second,
-		section .button-third {
+		#make-shirt #button-first,
+		#make-shirt #button-second,
+		#make-shirt #button-third {
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -68,39 +67,116 @@ body {
 			border: none;
 			cursor: pointer;
 		}
-		section .button-second {
+		#make-shirt #button-second {
 			top: 50px;
 		}
-		section .button-third {
+		#make-shirt #button-third {
 			top: 100px;
 		}
-	section.saved-items {
-		flex-basis: 100%;
+	#saved-items {
+		width: 100%;
 	}
-		section.saved-items h2 {
+		#saved-items h2 {
 			background-color: #00dde0;
 			margin: 0;
 			padding: 20px 0;
 			color: white;
+			text-align: center;
 		}
-		section.saved-items p {
+		#saved-items p {
 			width: auto;
 			position: static;
 			font-size: 16px;
 			font-weight: normal;
 		}
-		section.saved-items ul.saved-shirts {
+		#saved-items ul#saved-shirts {
 			list-style: none;
 			padding-left: 0;
 		}
-			section.saved-items ul.saved-shirts li {
-				width: 200px;
-				height: 200px;
-				float: left;
+			#saved-items ul#saved-shirts li {
+				width: 30%;
+				height: auto;
+				display: inline-block;
+				position: relative;
 			}
-	footer {
-		flex-basis: 100%;
+				#saved-items ul#saved-shirts li p {
+					position: absolute;
+					top: 30%;
+					right: calc(50% - 65px);
+					right: 45%;
+					width: 130px;
+				}
+	#footer[role="footer"] {
+		width: 100%;
 		text-align: center;
 		color: white;
 		background-color: #005051;
+		padding: 10px;
+		box-sizing: border-box;
 	}
+	.clear {
+		clear: both;
+	}
+
+@supports(display:flex){
+	body {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+		#header {
+			flex-basis: 100%;
+			width: 100%;
+			float: none;
+		}
+		form {
+			align-items: flex-start;
+			color: white;
+			flex-basis: 40%;
+			width: 40%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			float: none;
+		}
+			form textarea {
+				align-self: flex-start;
+				flex-basis: 100%;
+				float: none;
+			}
+			form label {
+				align-self: flex-start;
+				flex-basis: 50%;
+				width: 50%;
+				float: none;
+			}
+				form label[for="nerdy"]{
+					align-self: flex-start;
+					flex-basis: 100%;
+					width: 100%;
+					float: none;
+				}
+			form select, form input {
+				align-self: flex-start;
+				flex-basis: 50%;
+				width: 50%;
+				float: none;
+			}
+		#make-shirt {
+			float: none;
+			flex-basis: 60%;
+			width: 60%;
+			text-align: center;
+			position: relative;
+		}
+		#saved-items {
+			float: none;
+			flex-basis: 100%;
+			width: 100%;
+		}
+		#footer[role="footer"] {
+			float: none;
+			flex-basis: 100%;
+			width: 100%;
+		}
+}
