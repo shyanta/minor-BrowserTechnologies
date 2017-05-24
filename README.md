@@ -1,4 +1,4 @@
-# minor-BrowserTechnologies 
+# minor-BrowserTechnologies
 
 ## Breek het web
 [Presentatie](/Breek%20het%20Web/Custom%20Fonts.pdf)
@@ -12,7 +12,7 @@ dat deze data ook via javascript in je html gerenderd wordt. Maar dit levert alv
 Wanneer het opvragen van de API eventueel door een browser geblocked wordt. Het is toch een aparte request.
 
 * Het blijft verstandig om de gebruikers meldingen te geven wanneer iets niet werkt door de JavaScript.
-Natuurlijk wordt er bijna nooit JavaScript in zijn geheel uitgezet, dus een <noscipt></noscript> tag 
+Natuurlijk wordt er bijna nooit JavaScript in zijn geheel uitgezet, dus een <noscipt></noscript> tag
 heeft daarom weinig effect. Probeer dit op te lossen met if(){}else{} statements. Wanneer een request
 null of undefined is. Geef de gebruiker een melding waarin ze zien dat dit onderdeel niet werkt.
 Dit is natuurlijk een tijdelijke oplossing. Het is de bedoeling dat ze zonder dat deel JavaScript evengoed
@@ -25,5 +25,5 @@ Met JavaScript:
 ![Met javascript](screenshots/metjs.jpg)
 Zonder JavaScript:
 ![Zonder JavaScript](screenshots/zonderjs.jpg)
-Hier zie je dat bij de laatste foto, de results section ook direct al wordt laten zien, alle sections zijn op deze manier 
-berijkbaar
+Hier zie je dat bij de laatste foto, de results section ook direct al wordt laten zien, alle sections zijn op deze manier
+bereikbaar
