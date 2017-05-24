@@ -16,7 +16,9 @@ var savedNoItems = document.getElementById('no-shirts');
 	saveButton2.setAttribute('hidden', true);
 	saveButton3.setAttribute('hidden', true);
 
-if (typeof window.localStorage !== "undefined" || JSON.parse(localStorage.getItem('shirt1')) === ""){
+
+
+if (typeof window.localStorage !== "undefined"){
 	savedSection.removeAttribute('hidden');
 	saveButton1.removeAttribute('hidden');
 	saveButton2.removeAttribute('hidden');
@@ -85,7 +87,6 @@ if (typeof window.localStorage !== "undefined" || JSON.parse(localStorage.getIte
 			shirtThreeFunc(JSON.parse(localStorage.getItem('shirt3')));
 		});
 	}
-	console.log(JSON.parse(localStorage.getItem('shirt1')));
 	var shirtOneData = JSON.parse(localStorage.getItem('shirt1'));
 	var shirtTwoData = JSON.parse(localStorage.getItem('shirt2'));
 	var shirtThreeData = JSON.parse(localStorage.getItem('shirt3'));

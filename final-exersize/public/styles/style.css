@@ -1,9 +1,6 @@
 body {
 	margin: 0;
 	padding: 0;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
 	font-family: sans-serif;
 }
 	#header {
@@ -50,8 +47,8 @@ body {
 			width: 180px;
 			position: absolute;
 			top: 30%;
-			right: calc(50% - 90px);
 			right: 40%;
+			right: calc(50% - 90px);
 			font-size: 20px;
 			font-weight: bold;
 		}
@@ -102,9 +99,12 @@ body {
 				#saved-items ul#saved-shirts li p {
 					position: absolute;
 					top: 30%;
-					right: calc(50% - 65px);
 					right: 45%;
+					right: calc(50% - 85px);
 					width: 130px;
+				}
+				#saved-items ul#saved-shirts li img {
+					width: 100%;
 				}
 	#footer[role="footer"] {
 		width: 100%;
@@ -116,6 +116,17 @@ body {
 	}
 	.clear {
 		clear: both;
+	}
+	@media screen and (max-width: 40em){
+		form {
+			width: 100%;
+		}
+		#make-shirt {
+			width: 100%;
+		}
+		#saved-items ul#saved-shirts li {
+			width: 100%;
+		}
 	}
 
 @supports(display:flex){
@@ -178,5 +189,15 @@ body {
 			float: none;
 			flex-basis: 100%;
 			width: 100%;
+		}
+		@media screen and (max-width: 40em){
+			form {
+				flex-basis: 100%;
+				width: 100%;
+			}
+			#make-shirt {
+				flex-basis: 100%;
+				width: 100%;
+			}
 		}
 }
