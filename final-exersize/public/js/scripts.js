@@ -127,4 +127,9 @@ if (typeof window.localStorage !== "undefined"){
 			+'</p><img src="img/shirt-'+shirtThreeData.color+'.jpg" alt="'+shirtThreeData.color+'" title="'+shirtThreeData.color+'"/>'
 		}
 	}
+} else {
+	savedSection.setAttribute('hidden', true);
+	saveButton1.setAttribute('hidden', true);
+	saveButton2.setAttribute('hidden', true);
+	saveButton3.setAttribute('hidden', true);
 }

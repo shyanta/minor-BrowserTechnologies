@@ -30,6 +30,11 @@ DeviceLab | Kindle
 DeviceLab | Nokia Windows Phone
 Iphone 6S | Safari / iOS 10.3
 
+I've tested my site on the DeviceLab and multiple browsers. Because of the checks I wrote in my code,
+the site was working everywhere. I made sure that all the elements have a fallback or I wrote them
+in a way that all the browsers already support. The styling is rendered the same on each device or browser.
+So the test did well because it worked on each device.
+
 ## Features
 -	Custom made T-shirt text
 -	Choice in T-shirt color
@@ -137,6 +142,9 @@ if (typeof window.localStorage !== "undefined"){
 	console.log('NO');
 }
 ```
+
+Also `querySelector()` isn't supported in IE8 or lower. So I changed all my querySelectors to
+`getElementById()`. Because this is supported.
 
 ## Screenshots
 ### Without CSS

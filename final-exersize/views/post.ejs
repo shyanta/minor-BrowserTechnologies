@@ -19,7 +19,7 @@
 		<option value="blue">Blue</option>
 		<option value="hotpink">Pink</option>
 		<option value="white">White</option>
-		<option value="pink">Black</option>
+		<option value="black">Black</option>
 	</select>
 	<label for="font">Text Font:</label>
 	<select name="font" id="font">
@@ -41,9 +41,9 @@
 		<%= text %>
 	<%}%></p>
 	<img id="img" src="img/shirt-<%=color%>.jpg" alt="<%= color%>" title="<%= color%>"/>
-	<button id="button-first">Save as first Shirt</button>
-	<button id="button-second">Save as second Shirt</button>
-	<button id="button-third">Save as third Shirt</button>
+	<button id="button-first" hidden>Save as first Shirt</button>
+	<button id="button-second" hidden>Save as second Shirt</button>
+	<button id="button-third" hidden>Save as third Shirt</button>
 </div>
 <div class="clear"></div>
 <div id="saved-items" hidden>

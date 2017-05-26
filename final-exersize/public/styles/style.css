@@ -99,8 +99,8 @@ body {
 				#saved-items ul#saved-shirts li p {
 					position: absolute;
 					top: 30%;
-					right: 45%;
-					right: calc(50% - 85px);
+					right: 31%;
+					right: calc(50% - 65px);
 					width: 130px;
 				}
 				#saved-items ul#saved-shirts li img {
